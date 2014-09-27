@@ -1,0 +1,21 @@
+<h1>Plans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plans.each do |plan| %>
+      <tr>
+        <td><%= plan.name %></td>
+        <td><%= number_to_currency(plan.price) %></td>
+        <td><%= plan.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
