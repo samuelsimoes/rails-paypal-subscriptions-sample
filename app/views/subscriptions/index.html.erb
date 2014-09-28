@@ -1,0 +1,19 @@
+<h1>Subscriptions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Paid until</th>
+      <th>Plan</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @subscriptions.each do |subscription| %>
+      <tr>
+        <td><%= subscription.paid_until %></td>
+        <td><%= subscription.plan %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
