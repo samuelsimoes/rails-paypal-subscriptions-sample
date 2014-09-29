@@ -6,6 +6,7 @@
       <th>Name</th>
       <th>Price</th>
       <th>Description</th>
+      <th></th>
     </tr>
   </thead>
 
@@ -15,6 +16,8 @@
         <td><%= plan.name %></td>
         <td><%= number_to_currency(plan.price) %></td>
         <td><%= plan.description %></td>
+        <td><%= link_to 'Subscribe', subscriptions_path(plan_id: plan.id),
+                                     method: :post %></td>
       </tr>
     <% end %>
   </tbody>

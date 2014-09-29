@@ -2,23 +2,23 @@
 
 <p>
   <strong>Paypal payer:</strong>
-  <%= @subscription.paypal_payer_id %>
+  <%= subscription.paypal_payer_id %>
 </p>
 
 <p>
   <strong>Paypal profile:</strong>
-  <%= @subscription.paypal_profile_id %>
+  <%= subscription.paypal_profile_id %>
 </p>
 
 <p>
   <strong>Paid until:</strong>
-  <%= @subscription.paid_until %>
+  <%= subscription.paid_until %>
 </p>
 
 <p>
   <strong>Plan:</strong>
-  <%= @subscription.plan %>
+  <%= subscription.plan %>
 </p>
 
-<%= link_to 'Edit', edit_subscription_path(@subscription) %> |
+<%= link_to 'Edit', edit_subscription_path(subscription) %> |
 <%= link_to 'Back', subscriptions_path %>
