@@ -4,4 +4,8 @@ class Subscription < ActiveRecord::Base
   belongs_to :plan
 
   delegate :price, :paypal_description, to: :plan
+
+  def cancel!
+    update(cancel: true)
+  end
 end
