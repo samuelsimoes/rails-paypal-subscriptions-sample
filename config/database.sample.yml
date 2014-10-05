@@ -1,0 +1,15 @@
+defaults: &defaults
+  adapter: postgresql
+  encoding: unicode
+  username: database_username
+  password: database_password
+
+development:
+  <<: *defaults
+  pool: 5
+  database: paypal_subscriptions_development
+
+test:
+  <<: *defaults
+  pool: 5
+  database: paypal_subscriptions_test
