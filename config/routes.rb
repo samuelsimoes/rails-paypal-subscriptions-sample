@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :subscriptions
+  resources :subscriptions do
+    member do
+      get :make_recurring
+    end
+  end
 
   resources :plans
 

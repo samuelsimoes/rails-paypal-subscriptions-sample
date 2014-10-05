@@ -13,6 +13,19 @@ class SubscriptionsController < ApplicationController
     redirect_to checkout_url
   end
 
+  def make_recurring
+    if PaypalSubscription::RecurrenceCreator.create!(
+        subscription: subscription,
+        paypal_options: paypal_options.merge({
+          payer_id: params[:PayerID],
+          token: params[:token]
+        })
+      )
+      redirect_to subscription_path(subscription),
+        notice: I18n.t('flashes.subscription.successfully_created')
+    end
+  end
+
   def destroy
     @subscription.destroy
     redirect_to subscriptions_url, notice: 'Subscription was successfully destroyed.'
