@@ -13,10 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140928002705) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-  enable_extension "uuid-ossp"
-
   create_table "plans", force: true do |t|
     t.string   "name",               null: false
     t.float    "price",              null: false
@@ -26,7 +22,7 @@ ActiveRecord::Schema.define(version: 20140928002705) do
     t.datetime "updated_at"
   end
 
-  create_table "subscriptions", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
+  create_table "subscriptions", force: true do |t|
     t.string   "paypal_payer_id"
     t.string   "paypal_profile_id"
     t.datetime "paid_until"
@@ -35,6 +31,6 @@ ActiveRecord::Schema.define(version: 20140928002705) do
     t.datetime "updated_at"
   end
 
-  add_index "subscriptions", ["plan_id"], name: "index_subscriptions_on_plan_id", using: :btree
+  add_index "subscriptions", ["plan_id"], name: "index_subscriptions_on_plan_id"
 
 end
