@@ -4,6 +4,8 @@
 
 This is a very simple Rails app showing an aproach to create an app with PayPal subscriptions.
 
+You can read more about this app and PayPal subscriptions on **[Rails with PayPal subscriptions guide](http://blog.samuelsimoes.com/rails/2014/11/01/part-1-rails-with-paypal-subscription-guide.html)**.
+
 #Instalation
 
 1. Run `cp .env.sample .env` and update your PayPal credentials on `.env` file
