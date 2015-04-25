@@ -8,4 +8,9 @@ class Subscription < ActiveRecord::Base
   def cancel!
     update(cancel: true)
   end
+
+  def paid?
+    return false if paid_until.blank?
+    paid_until >= Time.current
+  end
 end

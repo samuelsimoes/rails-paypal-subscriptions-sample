@@ -2,3 +2,4 @@ en:
   flashes:
     subscription:
       successfully_created: "Your subscription was successfully created!"
+      cancellation_asked: "Was requested the cancellation of your subscription on PayPal, it will be cancelled soon."

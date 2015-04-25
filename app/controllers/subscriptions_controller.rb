@@ -25,8 +25,10 @@ class SubscriptionsController < ApplicationController
   end
 
   def destroy
-    @subscription.destroy
-    redirect_to subscriptions_url, notice: 'Subscription was successfully destroyed.'
+    PaypalSubscription::ResourceFacade.cancel(paypal_options)
+
+    redirect_to subscription_path(subscription),
+      notice: I18n.t('flashes.subscription.cancellation_asked')
   end
 
   private
