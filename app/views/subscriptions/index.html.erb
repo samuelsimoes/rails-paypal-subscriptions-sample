@@ -15,6 +15,7 @@
           <%= l(subscription.paid_until, format: :long) if subscription.paid? %>
         </td>
         <td><%= subscription.plan %></td>
+        <td><%= link_to 'View', subscription %></td>
       </tr>
     <% end %>
   </tbody>
