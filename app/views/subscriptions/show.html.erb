@@ -10,10 +10,12 @@
   <%= subscription.paypal_profile_id %>
 </p>
 
-<p>
-  <strong>Paid until:</strong>
-  <%= subscription.paid_until %>
-</p>
+<% if subscription.paid? %>
+  <p>
+    <strong>Paid until:</strong>
+    <%= l subscription.paid_until, format: :long %>
+  </p>
+<% end %>
 
 <p>
   <strong>Plan:</strong>

@@ -11,7 +11,9 @@
   <tbody>
     <% @subscriptions.each do |subscription| %>
       <tr>
-        <td><%= subscription.paid_until %></td>
+        <td>
+          <%= l(subscription.paid_until, format: :long) if subscription.paid? %>
+        </td>
         <td><%= subscription.plan %></td>
       </tr>
     <% end %>
