@@ -13,4 +13,4 @@ You can read more about this app and PayPal subscriptions on **[Rails with PayPa
 3. Run `bundle install; bundle exec rake db:setup`
 4. Start the app with `foreman start`
 
-_@samuelsimoes ~ slip.cm@gmail.com ~ samuelsimoes.com_
+_@samuelsimoes ~ samuel@samuelsimoes.com ~ samuelsimoes.com_
