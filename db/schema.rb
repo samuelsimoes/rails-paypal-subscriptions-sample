@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20140928002705) do
 
-  create_table "plans", force: true do |t|
+  create_table "plans", force: :cascade do |t|
     t.string   "name",               null: false
     t.float    "price",              null: false
     t.string   "paypal_description"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20140928002705) do
     t.datetime "updated_at"
   end
 
-  create_table "subscriptions", force: true do |t|
+  create_table "subscriptions", force: :cascade do |t|
     t.string   "paypal_payer_id"
     t.string   "paypal_profile_id"
     t.datetime "paid_until"
