@@ -11,10 +11,10 @@
 </p>
 
 <% if subscription.paid? %>
-  <p>
-    <strong>Paid until:</strong>
-    <%= l subscription.paid_until, format: :long %>
-  </p>
+    <p>
+      <strong>Paid until:</strong>
+      <%= l subscription.paid_until, format: :long %>
+    </p>
 <% end %>
 
 <p>
@@ -23,10 +23,16 @@
 </p>
 
 <% if subscription.paid? %>
-  <%= link_to 'Cancel',
-               subscription_path(subscription),
-               method: :delete,
-               data: { confirm: 'Are you sure that you want cancel your subscription?' } %> |
+    <%= link_to 'Cancel',
+                subscription_path(subscription),
+                method: :delete,
+                data: { confirm: 'Are you sure that you want cancel your subscription?' } %> |
+<% end %>
+
+<% if subscription.canceled? %>
+    <div class="alert alert-warning">
+      This subscription has been canceled
+    </div>
 <% end %>
 
 <%= link_to 'Back', subscriptions_path, class: 'btn btn-secondary' %>
