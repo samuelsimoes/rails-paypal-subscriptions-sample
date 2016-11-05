@@ -6,6 +6,9 @@
   "keywords": ["rails",
                "paypal",
                "recurring"],
+  "scripts": {
+    "postdeploy": "bundle exec rake db:schema:load db:seed"
+  },
   "env": {
     "PAYPAL_SANDBOX": {
       "description": "Set to false if you want to run it against Production Environment",
