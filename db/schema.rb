@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161105164246) do
+ActiveRecord::Schema.define(version: 20161105170303) do
 
   create_table "plans", force: :cascade do |t|
-    t.string   "name",               null: false
-    t.float    "price",              null: false
+    t.string   "name",                           null: false
+    t.float    "price",                          null: false
     t.string   "paypal_description"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "trial_length",       default: 0, null: false
   end
 
   create_table "subscriptions", force: :cascade do |t|
