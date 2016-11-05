@@ -19,6 +19,9 @@
         <td>
           <%= link_to 'Subscribe', subscriptions_path(plan_id: plan.id), method: :post, class: 'btn btn-link' %>
         </td>
+        <td>
+          <%= link_to 'Edit', [:edit, plan], class: 'btn btn-link' %>
+        </td>
       </tr>
     <% end %>
   </tbody>

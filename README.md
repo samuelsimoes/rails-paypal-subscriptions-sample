@@ -29,7 +29,11 @@ _Transaction type_: *eCheck - complete*
 
 _Paypal Payer ID_: *from subscription page*
 
-_receipt_ID_: * id of subscription*
+_txn_type_: *recurring_payment*
+
+_custom_: *empty*
+
+_invoice_: *id of subscription*
 
 ## Credits
 
