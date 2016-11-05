@@ -14,4 +14,9 @@ This is a very simple Rails app showing an approach to create an app with PayPal
 4. Start the app with `foreman start`
 5. Read more about this app and PayPal subscriptions on **[Rails with PayPal subscriptions guide](http://blog.samuelsimoes.com/rails/2014/11/01/part-1-rails-with-paypal-subscription-guide.html)**.
 
+
+## Deploy now
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 _@samuelsimoes ~ samuel@samuelsimoes.com ~ [samuelsimoes.com](http://samuelsimoes.com)_
