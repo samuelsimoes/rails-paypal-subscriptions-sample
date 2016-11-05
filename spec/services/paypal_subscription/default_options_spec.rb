@@ -29,8 +29,8 @@ describe PaypalSubscription::DefaultOptions do
       reference: 2,
       description: 'my super plan',
       amount: 20.20,
-      currency: 'BRL',
-      locale: 'pt_BR'
+      currency: 'EUR',
+      locale: 'en_US'
     })
   end
 end
