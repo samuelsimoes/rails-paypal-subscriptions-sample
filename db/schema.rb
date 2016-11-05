@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140928002705) do
+ActiveRecord::Schema.define(version: 20161105164246) do
 
   create_table "plans", force: :cascade do |t|
     t.string   "name",               null: false
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20140928002705) do
     t.integer  "plan_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "canceled",          default: false, null: false
   end
 
   add_index "subscriptions", ["plan_id"], name: "index_subscriptions_on_plan_id"

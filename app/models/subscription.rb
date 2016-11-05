@@ -6,7 +6,7 @@ class Subscription < ActiveRecord::Base
   delegate :price, :paypal_description, to: :plan
 
   def cancel!
-    update(cancel: true)
+    update(canceled: true)
   end
 
   def paid?
