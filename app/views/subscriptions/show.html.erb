@@ -22,17 +22,23 @@
   <%= subscription.plan %>
 </p>
 
-<% if subscription.paid? %>
+<% if subscription.trial? %>
+    <div class="alert alert-info">
+      Trial ending on <%=subscription.paid_until + 30.days%>
+    </div>
+<% end %>
+<% if subscription.canceled? %>
+    <div class="alert alert-warning">
+      This subscription has been canceled
+    </div>
+<% end %>
+
+<% if subscription.paid? || subscription.trial? %>
     <%= link_to 'Cancel',
                 subscription_path(subscription),
                 method: :delete,
                 data: { confirm: 'Are you sure that you want cancel your subscription?' } %> |
 <% end %>
 
-<% if subscription.canceled? %>
-    <div class="alert alert-warning">
-      This subscription has been canceled
-    </div>
-<% end %>
 
 <%= link_to 'Back', subscriptions_path, class: 'btn btn-secondary' %>

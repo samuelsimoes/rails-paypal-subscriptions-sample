@@ -13,4 +13,9 @@ class Subscription < ActiveRecord::Base
     return false if paid_until.blank?
     paid_until >= Time.current
   end
+
+  def trial?
+    return false if paid_until.blank?
+    paid_until < created_at
+  end
 end
