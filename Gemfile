@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby File.read('.ruby-version').strip
 
-gem 'rails', '4.2.6'
+gem 'rails', '~> 5.0.0'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
