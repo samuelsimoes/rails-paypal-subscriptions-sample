@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   resources :subscriptions do
-    member do
-      get :make_recurring
-    end
+    get :make_recurring, on: :member
   end
 
   resources :plans

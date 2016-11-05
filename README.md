@@ -6,10 +6,12 @@ This is a very simple Rails app showing an approach to create an app with PayPal
 
 ##Installation
 
-1. Run `cp .env.sample .env` and update your PayPal credentials on `.env` file
-2. Run `gem install foreman`
-3. Run `bundle install; bundle exec rake db:setup`
+1. Run `cp .env.sample .env` 
+2. update your PayPal credentials on `.env` file. Find them on https://developer.paypal.com/developer/accounts/
+3. Run `gem install foreman`
+3. Run `bundle install`
+4. Run `bundle exec rake db:setup`
 4. Start the app with `foreman start`
 5. Read more about this app and PayPal subscriptions on **[Rails with PayPal subscriptions guide](http://blog.samuelsimoes.com/rails/2014/11/01/part-1-rails-with-paypal-subscription-guide.html)**.
 
-_@samuelsimoes ~ samuel@samuelsimoes.com ~ samuelsimoes.com_
+_@samuelsimoes ~ samuel@samuelsimoes.com ~ [samuelsimoes.com](http://samuelsimoes.com)_
