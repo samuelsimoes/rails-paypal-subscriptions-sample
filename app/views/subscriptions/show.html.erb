@@ -1,20 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Paypal payer:</strong>
+  <strong>Paypal payer ID:</strong>
   <%= subscription.paypal_payer_id %>
 </p>
 
 <p>
-  <strong>Paypal profile:</strong>
+  <strong>Paypal profile ID:</strong>
   <%= subscription.paypal_profile_id %>
 </p>
 
 <% if subscription.paid? %>
-  <p>
-    <strong>Paid until:</strong>
-    <%= l subscription.paid_until, format: :long %>
-  </p>
+    <p>
+      <strong>Paid until:</strong>
+      <%= l subscription.paid_until, format: :long %>
+    </p>
 <% end %>
 
 <p>
@@ -22,10 +22,23 @@
   <%= subscription.plan %>
 </p>
 
-<% if subscription.paid? %>
-  <%= link_to 'Cancel',
-               subscription_path(subscription),
-               method: :delete,
-               data: { confirm: 'Are you sure that you want cancel your subscription?' } %> |
+<% if subscription.trial? %>
+    <div class="alert alert-info">
+      Trial ending on <%=subscription.paid_until + 30.days%>
+    </div>
 <% end %>
-<%= link_to 'Back', subscriptions_path %>
+<% if subscription.canceled? %>
+    <div class="alert alert-warning">
+      This subscription has been canceled
+    </div>
+<% end %>
+
+<% if subscription.paid? || subscription.trial? %>
+    <%= link_to 'Cancel',
+                subscription_path(subscription),
+                method: :delete,
+                data: { confirm: 'Are you sure that you want cancel your subscription?' } %> |
+<% end %>
+
+
+<%= link_to 'Back', subscriptions_path, class: 'btn btn-secondary' %>

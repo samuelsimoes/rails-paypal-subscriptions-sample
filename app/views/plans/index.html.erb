@@ -1,6 +1,6 @@
 <h1>Plans</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -16,9 +16,15 @@
         <td><%= plan.name %></td>
         <td><%= number_to_currency(plan.price) %></td>
         <td><%= plan.description %></td>
-        <td><%= link_to 'Subscribe', subscriptions_path(plan_id: plan.id),
-                                     method: :post %></td>
+        <td>
+          <%= link_to 'Subscribe', subscriptions_path(plan_id: plan.id), method: :post, class: 'btn btn-link' %>
+        </td>
+        <td>
+          <%= link_to 'Edit', [:edit, plan], class: 'btn btn-link' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= link_to 'Subscriptions', subscriptions_path, class: 'btn btn-primary' %>

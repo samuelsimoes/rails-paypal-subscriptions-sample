@@ -1,4 +1,4 @@
-class Plan < ActiveRecord::Base
+class Plan < ApplicationRecord
   validates :paypal_description, length: { maximum: 120 }
 
   def paypal_description=(value)

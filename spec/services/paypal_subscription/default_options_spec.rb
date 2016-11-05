@@ -8,7 +8,8 @@ describe PaypalSubscription::DefaultOptions do
       paypal_payer_id: '20',
       paypal_profile_id: '2030',
       price: 20.20,
-      paypal_description: 'my super plan'
+      paypal_description: 'my super plan',
+      plan: Plan.create(name: 'my super plan', price: 20.20)
      )
   }
   let(:current_time) { double }
@@ -29,8 +30,8 @@ describe PaypalSubscription::DefaultOptions do
       reference: 2,
       description: 'my super plan',
       amount: 20.20,
-      currency: 'BRL',
-      locale: 'pt_BR'
+      currency: 'EUR',
+      locale: 'en_US'
     })
   end
 end
