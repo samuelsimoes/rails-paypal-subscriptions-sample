@@ -1,4 +1,4 @@
-class Subscription < ActiveRecord::Base
+class Subscription < ApplicationRecord
   attr_accessor :paypal_payment_token
 
   belongs_to :plan
