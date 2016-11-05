@@ -2,6 +2,8 @@ class PaypalController < ApplicationController
   protect_from_forgery except: [:ipn_listener]
 
   def ipn_listener
+    Rails.logger.info "params received:"
+    Rails.logger.info params
     if params[:txn_type].present?
       PaypalSubscription::NotificationHandler.resolve!(
         subscription: subscription,

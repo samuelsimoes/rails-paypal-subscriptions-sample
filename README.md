@@ -19,4 +19,21 @@ This is a very simple Rails app showing an approach to create an app with PayPal
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
+## IPN Simulation
+
+Once deployed on Heroku you can [simulate an instant payment notification from Paypal Dashboard](https://developer.paypal.com/developer/ipnSimulator/).
+
+_IPN handler URL_: *https://yourappname.herokuapp.com/paypal/ipn_listener*
+
+_Transaction type_: *eCheck - complete*
+
+_Paypal Payer ID_: *from subscription page*
+
+_receipt_ID_: * id of subscription*
+
+## Credits
+
 _@samuelsimoes ~ samuel@samuelsimoes.com ~ [samuelsimoes.com](http://samuelsimoes.com)_
+
+_@coorasse ~ coorasse@gmail.com ~ [https://medium.com/@coorasse](https://medium.com/@coorasse)_
+
