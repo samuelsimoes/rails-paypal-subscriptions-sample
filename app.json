@@ -1,0 +1,33 @@
+{
+  "name": "Rails Recurring Paypal",
+  "description": "A small example on how to perform recurring payments using Paypal in Rails",
+  "repository": "https://github.com/samuelsimoes/rails-paypal-subscriptions-sample",
+  "logo": "https://upload.wikimedia.org/wikipedia/fr/e/ec/Paypal_2012_(logo).png",
+  "keywords": [
+    "rails",
+    "paypal",
+    "recurring"
+  ],
+  "scripts": {
+    "postdeploy": "bundle exec rake db:schema:load db:seed"
+  },
+  "env": {
+    "PAYPAL_SANDBOX": {
+      "description": "Set to false if you want to run it against Production Environment",
+      "value": "true"
+    },
+    "PAYPAL_USERNAME": {
+      "description": "Find it in you Developer Dashboard on Paypal."
+    },
+    "PAYPAL_PASSWORD": {
+      "description": "Find it in you Developer Dashboard on Paypal."
+    },
+    "PAYPAL_SIGNATURE": {
+      "description": "Find it in you Developer Dashboard on Paypal."
+    }
+  },
+  "image": "heroku/ruby",
+  "addons": [
+    "heroku-postgresql"
+  ]
+}
